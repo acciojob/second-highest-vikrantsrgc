@@ -10,6 +10,14 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
+			if (!arr || arr.length === 0) {
+				return null
+				
+			}
+
+			const sorted = [...arr].sort()
+
+			return sorted[1]
 			
 		}
 
