@@ -8,18 +8,26 @@
 
 <body>	
 	<script>
-		function secondHighest(arr) {
+		
 			//Write your code here
-			if (!arr || arr.length === 0) {
-				return null
-				
-			}
-
-			const sorted = [...arr].sort()
-
-			return sorted[1]
-			
-		}
+			function secondHighest(arr) {
+    if (!Array.isArray(arr) || arr.length < 2) return null;
+    
+    let first = -Infinity;
+    let second = -Infinity;
+    
+    for (const num of arr) {
+        if (num > first) {
+            second = first;
+            first = num;
+        } else if (num > second && num !== first) {
+            second = num;
+        }
+    }
+    
+    return second !== -Infinity ? second : null;
+}			
+		
 
 		function Main() {
 			var n = prompt("Enter the number of elements");
